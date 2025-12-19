@@ -1,0 +1,29 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "ReadFromRawBucket",
+			"Effect": "Allow",
+			"Action": [
+				"s3:GetObject"
+			],
+			"Resource": "arn:aws:s3:::raw-store-events-cloudliz/*"
+		},
+		{
+			"Sid": "WriteToProcessedBucket",
+			"Effect": "Allow",
+			"Action": [
+				"s3:PutObject"
+			],
+			"Resource": "arn:aws:s3:::processed-store-events-cloudliz/*"
+		},
+		{
+			"Sid": "ListBucketsForRead",
+			"Effect": "Allow",
+			"Action": [
+				"s3:ListBucket"
+			],
+			"Resource": "arn:aws:s3:::raw-store-events-cloudliz"
+		}
+	]
+}
